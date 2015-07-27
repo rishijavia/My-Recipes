@@ -10,3 +10,11 @@ descrip:text
 - description must be present
 - description must be 20 to 500 characters
 - chef_id must be present
+
+testing specs for chef:
+
+- chefname must be present
+- chefname must be between 3-40 characters
+- email must be present
+- email must be unique
+- email must be valid
