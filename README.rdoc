@@ -18,3 +18,18 @@ testing specs for chef:
 - email must be present
 - email must be unique
 - email must be valid
+
+testing specs for chefs:
+We already have:
+-chef model and validations
+-chef tables with columns: name and email
+
+We need to do:
+-add passwords to the chef tables so they can be authenticated and logged in
+-email will be used for login in credentials
+-ability to register new chefs to use to the application
+-ability to display chef's profile
+-ablity to list all the chefs
+-ability for chefs to log in and log out of the application
+-restrict actions like create, edit and like recipes for logged in chefs only
+-restrict editing of recipes by the chef who created it
