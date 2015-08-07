@@ -23,6 +23,7 @@
     <% if @recipe.ingredients.any? %>
     <p>Ingredients: <%= render @recipe.ingredients %> </p>
     <% end %>
+    
     <p>
       <strong>Steps:</strong>
     </p>
@@ -41,8 +42,12 @@
 </div>
 </div>
 
-<h5><%= link_to 'Return to Recipes Listing', recipes_path, class: "btn btn-warning btn-small" %>
-  <% if logged_in? and @recipe.chef == current_user %>    
+<h5>
+  <%= link_to 'Return to Recipes Listing', recipes_path, class: "btn btn-warning btn-small" %>
+  <% if logged_in? and (@recipe.chef == current_user || current_user.admin?)  %>
     <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn btn-info btn-small" %>
+  <% end %>
+  <% if current_user.admin? %>
+    <%= link_to "Delete Recipe", @recipe, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger btn-small" %>
   <% end %>
 </h5>
